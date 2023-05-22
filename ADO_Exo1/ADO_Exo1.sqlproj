@@ -67,4 +67,7 @@
   <ItemGroup>
     <None Include="ADO_Exo1.publish.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Seeds\Initial_Data.sql" />
+  </ItemGroup>
 </Project>
