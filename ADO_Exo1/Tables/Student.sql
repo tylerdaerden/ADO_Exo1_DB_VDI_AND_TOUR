@@ -9,7 +9,7 @@
 	[Active] BIT DEFAULT 1 NOT NULL , 
 
 	CONSTRAINT PK_Student PRIMARY KEY([ID]),
-	CONSTRAINT FK_Section FOREIGN KEY ([ID]) REFERENCES [Section]([ID]) ,
+	CONSTRAINT FK_Section FOREIGN KEY ([SectionID]) REFERENCES [Section]([ID]) ,
 	
 
 )
