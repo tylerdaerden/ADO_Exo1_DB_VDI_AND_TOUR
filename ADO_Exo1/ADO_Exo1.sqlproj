@@ -63,6 +63,7 @@
   <ItemGroup>
     <Build Include="Tables\Student.sql" />
     <Build Include="Tables\Section.sql" />
+    <Build Include="Views\V_Student.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ADO_Exo1.publish.xml" />

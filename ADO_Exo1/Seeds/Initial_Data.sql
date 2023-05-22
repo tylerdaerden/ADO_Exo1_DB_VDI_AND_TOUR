@@ -1,14 +1,20 @@
-﻿/*
-Modèle de script de post-déploiement							
---------------------------------------------------------------------------------------
- Ce fichier contient des instructions SQL qui seront ajoutées au script de compilation.		
- Utilisez la syntaxe SQLCMD pour inclure un fichier dans le script de post-déploiement.			
- Exemple :      :r .\monfichier.sql								
- Utilisez la syntaxe SQLCMD pour référencer une variable dans le script de post-déploiement.		
- Exemple :      :setvar TableName MyTable							
-               SELECT * FROM [$(TableName)]					
---------------------------------------------------------------------------------------
-*/
+﻿-- Création du login 
+IF NOT EXISTS (SELECT name FROM master.sys.server_principals WHERE name = 'Chris')BEGIN    CREATE LOGIN  [Chris]
+        WITH PASSWORD=N'Test1234=',        DEFAULT_DATABASE=[Master],        CHECK_EXPIRATION=OFF,        CHECK_POLICY=OFF
+END
+GO
+-- Creation de l'utilisateur (Database)
+
+CREATE USER [Chris] 
+    FOR LOGIN [Chris] 
+    WITH DEFAULT_SCHEMA = [dbo]
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [Chris]
+GO
+ALTER ROLE [db_datawriter] ADD MEMBER [Chris]
+GO
+
+-- Données Initiales
 
 use ADO_Exo1
 DELETE FROM [Student]
