@@ -95,6 +95,88 @@ using (SqlConnection connection = new SqlConnection())
 
         Console.WriteLine($"moyenne {moyenne}");
     }
+
+    //Inserer un nouveau student
+    //Instancier un student
+    Student moi = new Student
+    {
+        FirstName = "Steve",
+        LastName = "Lorent",
+        YearResult = 20,
+        Birthdate = new DateTime(2000, 01, 01),
+        SectionID = 1010
+    };
+
+    //Insertion en DB
+    //using(SqlCommand command = connection.CreateCommand())
+    //{
+    //    string query = "INSERT INTO student (FirstName, LastName, BirthDate, YearResult, SectionID) " +
+    //        " OUTPUT inserted.Id " +
+    //        "VALUES(@prenom, '" + moi.LastName + "', '" +
+    //        moi.BirthDate + "', '" + moi.YearResult +"', '" + moi.SectionID+ "')";
+
+    //    // command.Parameters.Add
+    //    SqlParameter PPrenom = new SqlParameter()
+    //    {
+    //        ParameterName = "prenom",
+    //        Value = moi.FirstName,
+    //        Direction = ParameterDirection.Input
+    //    };
+
+    //    command.Parameters.Add(PPrenom);
+
+    //    command.Parameters.AddWithValue("prenom", moi.FirstName);
+
+    //    command.CommandText = query;
+    //    connection.Open();
+    //    int id = (int)command.ExecuteScalar();
+    //    connection.Close();
+    //    Console.WriteLine("Nouvel Id : " + id);
+    //}
+
+    //Utilisation Requête parametrée
+
+    //Student voisin = new Student
+    //{
+    //    FirstName = "Arthur",
+    //    LastName = "Pendragon",
+    //    BirthDate = new DateTime(2000, 01, 01),
+    //    YearResult = 19,
+    //    SectionID = 1010
+    //};
+
+    //using(SqlCommand command = connection.CreateCommand())
+    //{
+    //    command.CommandText = "INSERT INTO student (FirstName, LastName, BirthDate, YearResult, SectionID) " +
+    //        "VALUES (@FirstName, @LastName, @BirthDate, @YearResult, @SectionId)";
+
+    //    command.Parameters.AddWithValue("FirstName", voisin.FirstName);
+    //    command.Parameters.AddWithValue("LastName", voisin.LastName);
+    //    command.Parameters.AddWithValue("BirthDate", voisin.BirthDate);
+    //    command.Parameters.AddWithValue("YearResult", voisin.YearResult);
+    //    command.Parameters.AddWithValue("SectionId", voisin.SectionID);
+
+    //    connection.Open();
+
+    //    command.ExecuteNonQuery();
+    //    connection.Close();
+    //}
+
+    using (SqlCommand command = connection.CreateCommand())
+    {
+        command.CommandText = "DELETE FROM student WHERE Id = 27";
+        connection.Open();
+        try
+        {
+            command.ExecuteNonQuery();
+        }
+        catch (SqlException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        connection.Close();
+    }
+
 }
 
 #endregion
