@@ -59,16 +59,22 @@
     <Folder Include="Tables" />
     <Folder Include="Seeds" />
     <Folder Include="Views" />
+    <Folder Include="Triggers" />
+    <Folder Include="StoredProc" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Student.sql" />
     <Build Include="Tables\Section.sql" />
     <Build Include="Views\V_Student.sql" />
+    <Build Include="StoredProc\AddSection.sql" />
+    <Build Include="Triggers\TR_Student_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ADO_Exo1.publish.xml" />
+    <None Include="ADO_Exo1TOURDANNY.publish.xml" />
+    <None Include="ADO_Exo1VDITFTIC.publish.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Seeds\Initial_Data.sql" />
+    <PostDeploy Include="Seeds\Initial_DataPostDeployement.sql" />
   </ItemGroup>
 </Project>
