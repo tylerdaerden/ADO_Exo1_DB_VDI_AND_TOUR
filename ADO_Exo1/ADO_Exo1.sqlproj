@@ -68,8 +68,8 @@
     <Build Include="Views\V_Student.sql" />
     <Build Include="StoredProc\AddSection.sql" />
     <Build Include="Triggers\TR_Student_Delete.sql" />
-    <Build Include="StoredProc\UpdateStudent.sql" />
-    <Build Include="StoredProc\DeleteStudent.sql" />
+    <Build Include="StoredProc\SP_Student_Update.sql" />
+    <Build Include="StoredProc\SP_Student_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ADO_Exo.publish.xml" />
