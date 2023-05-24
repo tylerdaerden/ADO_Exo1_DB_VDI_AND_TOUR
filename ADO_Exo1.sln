@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ADO_Exo1", "ADO_Exo1\ADO_Exo1.sqlproj", "{C17F02EE-8D32-44FB-AA45-5D87F56835F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exos_ADO_1_1_2", "Exos_ADO_1_1_2\Exos_ADO_1_1_2.csproj", "{CA7060DF-3430-4555-8730-D95AEB50F7E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exos_ADO", "Exos_ADO_1_1_2\Exos_ADO.csproj", "{CA7060DF-3430-4555-8730-D95AEB50F7E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
